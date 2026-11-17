@@ -1,0 +1,44 @@
+name: Build Ippo for macOS
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    name: macOS Apple Silicon build
+    runs-on: macos-15
+    timeout-minutes: 90
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cache Rust compilation
+        uses: swatinem/rust-cache@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Test reader logic
+        run: npm test
+      - name: Build macOS application and DMG
+        run: npm run tauri build -- --bundles app,dmg
+      - name: Upload macOS build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Ippo-to-Read-v0.3.7-macOS
+          path: |
+            target/release/bundle/dmg/*.dmg
+            target/release/bundle/macos/*.app/**
+            src-tauri/target/release/bundle/dmg/*.dmg
+            src-tauri/target/release/bundle/macos/*.app/**
+          if-no-files-found: error
+          retention-days: 14
