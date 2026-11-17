@@ -1,0 +1,178 @@
+
+> ippo-to-read@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# (node:848) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: clamp handles normal values, boundaries and non-finite values
+ok 1 - clamp handles normal values, boundaries and non-finite values
+  ---
+  duration_ms: 1.29729
+  type: 'test'
+  ...
+# Subtest: shelf names normalize whitespace and case
+ok 2 - shelf names normalize whitespace and case
+  ---
+  duration_ms: 0.499771
+  type: 'test'
+  ...
+# Subtest: volume ordering is numeric, not alphabetical
+ok 3 - volume ordering is numeric, not alphabetical
+  ---
+  duration_ms: 0.997999
+  type: 'test'
+  ...
+# Subtest: chapter ordering preserves decimal chapters
+ok 4 - chapter ordering preserves decimal chapters
+  ---
+  duration_ms: 0.200782
+  type: 'test'
+  ...
+# Subtest: volumes come before loose chapters within a mixed shelf
+ok 5 - volumes come before loose chapters within a mixed shelf
+  ---
+  duration_ms: 0.231808
+  type: 'test'
+  ...
+# Subtest: sort does not mutate the input array
+ok 6 - sort does not mutate the input array
+  ---
+  duration_ms: 0.966502
+  type: 'test'
+  ...
+# Subtest: common-name books share a shelf and unrelated series do not
+ok 7 - common-name books share a shelf and unrelated series do not
+  ---
+  duration_ms: 0.508043
+  type: 'test'
+  ...
+# Subtest: resume chooses the most recently read comic, not the largest chapter number
+ok 8 - resume chooses the most recently read comic, not the largest chapter number
+  ---
+  duration_ms: 0.165999
+  type: 'test'
+  ...
+# Subtest: unread shelves begin at their first numbered volume
+ok 9 - unread shelves begin at their first numbered volume
+  ---
+  duration_ms: 0.449976
+  type: 'test'
+  ...
+# Subtest: paged progress counts the visible page
+ok 10 - paged progress counts the visible page
+  ---
+  duration_ms: 0.35268
+  type: 'test'
+  ...
+# Subtest: scroll progress retains a fractional position inside the current page
+ok 11 - scroll progress retains a fractional position inside the current page
+  ---
+  duration_ms: 0.15276
+  type: 'test'
+  ...
+# Subtest: unread and zero-page comics report zero percent
+ok 12 - unread and zero-page comics report zero percent
+  ---
+  duration_ms: 0.068924
+  type: 'test'
+  ...
+# Subtest: out-of-range progress cannot exceed 100 percent
+ok 13 - out-of-range progress cannot exceed 100 percent
+  ---
+  duration_ms: 0.062433
+  type: 'test'
+  ...
+# Subtest: left and right arrow semantics reverse in RTL, but non-arrow keys do not
+ok 14 - left and right arrow semantics reverse in RTL, but non-arrow keys do not
+  ---
+  duration_ms: 0.065809
+  type: 'test'
+  ...
+# Subtest: relative time is stable at minute and day boundaries
+ok 15 - relative time is stable at minute and day boundaries
+  ---
+  duration_ms: 0.089194
+  type: 'test'
+  ...
+# Subtest: single Space advances once, only after the detection window
+ok 16 - single Space advances once, only after the detection window
+  ---
+  duration_ms: 0.257067
+  type: 'test'
+  ...
+# Subtest: double Space changes chapter without an unwanted single-page advance
+ok 17 - double Space changes chapter without an unwanted single-page advance
+  ---
+  duration_ms: 0.111037
+  type: 'test'
+  ...
+# Subtest: double Shift+Space goes to the previous chapter
+ok 18 - double Shift+Space goes to the previous chapter
+  ---
+  duration_ms: 0.083054
+  type: 'test'
+  ...
+# Subtest: separate taps outside the time window remain separate page turns
+ok 19 - separate taps outside the time window remain separate page turns
+  ---
+  duration_ms: 0.145368
+  type: 'test'
+  ...
+# Subtest: mixing Space and Shift+Space does not trigger a chapter change
+ok 20 - mixing Space and Shift+Space does not trigger a chapter change
+  ---
+  duration_ms: 0.093902
+  type: 'test'
+  ...
+# Subtest: leaving the reader cancels a pending Space action
+ok 21 - leaving the reader cancels a pending Space action
+  ---
+  duration_ms: 0.064777
+  type: 'test'
+  ...
+# Subtest: bookmark writes coalesce to the newest value
+ok 22 - bookmark writes coalesce to the newest value
+  ---
+  duration_ms: 0.388955
+  type: 'test'
+  ...
+# Subtest: in-flight bookmark writes cannot overwrite newer bookmarks out of order
+ok 23 - in-flight bookmark writes cannot overwrite newer bookmarks out of order
+  ---
+  duration_ms: 0.176045
+  type: 'test'
+  ...
+# Subtest: a failed save is retained for retry
+ok 24 - a failed save is retained for retry
+  ---
+  duration_ms: 0.453151
+  type: 'test'
+  ...
+# Subtest: after an in-flight failure the newest pending bookmark wins
+ok 25 - after an in-flight failure the newest pending bookmark wins
+  ---
+  duration_ms: 0.189235
+  type: 'test'
+  ...
+# Subtest: simultaneous flush requests share a serialized write
+ok 26 - simultaneous flush requests share a serialized write
+  ---
+  duration_ms: 0.25258
+  type: 'test'
+  ...
+# Subtest: disposing the reader cancels unsent work and ignores later schedules
+ok 27 - disposing the reader cancels unsent work and ignores later schedules
+  ---
+  duration_ms: 0.170136
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 141.680059

@@ -1,0 +1,24 @@
+[package]
+name = "ippo-desktop"
+version = "0.3.7"
+description = "Ippo to Read - a local-first comics and novels reader"
+authors = ["Ippo to Read contributors"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "ippo_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+ippo-core = { path = "../crates/ippo-core" }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-single-instance = "2"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde_json = "1"

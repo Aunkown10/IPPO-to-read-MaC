@@ -1,0 +1,456 @@
+
+> ippo-to-read@0.3.2 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# (node:2382) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: missing metadata is Unclassified, not a confident Comic label
+ok 1 - missing metadata is Unclassified, not a confident Comic label
+  ---
+  duration_ms: 2.918685
+  type: 'test'
+  ...
+# Subtest: English translated edition is not treated as Western comics
+ok 2 - English translated edition is not treated as Western comics
+  ---
+  duration_ms: 0.456247
+  type: 'test'
+  ...
+# Subtest: Korean edition language alone is not proof of origin either
+ok 3 - Korean edition language alone is not proof of origin either
+  ---
+  duration_ms: 0.17885
+  type: 'test'
+  ...
+# Subtest: explicit ORIGINAL language classifies an English-translated manhwa
+ok 4 - explicit ORIGINAL language classifies an English-translated manhwa
+  ---
+  duration_ms: 0.324078
+  type: 'test'
+  ...
+# Subtest: country of origin mappings support Japan Korea China Taiwan
+ok 5 - country of origin mappings support Japan Korea China Taiwan
+  ---
+  duration_ms: 0.103546
+  type: 'test'
+  ...
+# Subtest: explicit Tags manhwa plus webtoon retains both dimensions
+ok 6 - explicit Tags manhwa plus webtoon retains both dimensions
+  ---
+  duration_ms: 0.242035
+  type: 'test'
+  ...
+# Subtest: manga label with tall pages remains manga
+ok 7 - manga label with tall pages remains manga
+  ---
+  duration_ms: 0.271048
+  type: 'test'
+  ...
+# Subtest: scroll mode does not decide nationality or format
+ok 8 - scroll mode does not decide nationality or format
+  ---
+  duration_ms: 0.229857
+  type: 'test'
+  ...
+# Subtest: tall images suggest layout but cannot distinguish manhua from manhwa
+ok 9 - tall images suggest layout but cannot distinguish manhua from manhwa
+  ---
+  duration_ms: 0.33233
+  type: 'test'
+  ...
+# Subtest: single tall cover is insufficient for long-strip classification
+ok 10 - single tall cover is insufficient for long-strip classification
+  ---
+  duration_ms: 0.320392
+  type: 'test'
+  ...
+# Subtest: ad/cover outliers are ignored when estimating strip layout
+ok 11 - ad/cover outliers are ignored when estimating strip layout
+  ---
+  duration_ms: 0.149756
+  type: 'test'
+  ...
+# Subtest: Manga flag alone is a suggestion and stronger explicit tags win
+ok 12 - Manga flag alone is a suggestion and stronger explicit tags win
+  ---
+  duration_ms: 0.163867
+  type: 'test'
+  ...
+# Subtest: contradictory local origin fields are visible conflicts
+ok 13 - contradictory local origin fields are visible conflicts
+  ---
+  duration_ms: 0.198549
+  type: 'test'
+  ...
+# Subtest: malformed metadata warnings are displayed, not silently swallowed
+ok 14 - malformed metadata warnings are displayed, not silently swallowed
+  ---
+  duration_ms: 0.112008
+  type: 'test'
+  ...
+# Subtest: old duplicated XML metadata values are interpreted correctly
+ok 15 - old duplicated XML metadata values are interpreted correctly
+  ---
+  duration_ms: 0.242876
+  type: 'test'
+  ...
+# Subtest: normalized matching supports diacritics fullwidth punctuation and CJK
+ok 16 - normalized matching supports diacritics fullwidth punctuation and CJK
+  ---
+  duration_ms: 1.189201
+  type: 'test'
+  ...
+# Subtest: second or later MAL result matches, not only the first
+ok 17 - second or later MAL result matches, not only the first
+  ---
+  duration_ms: 5.098919
+  type: 'test'
+  ...
+# Subtest: MAL synonym/alternate English title can identify a romanized work
+ok 18 - MAL synonym/alternate English title can identify a romanized work
+  ---
+  duration_ms: 0.252179
+  type: 'test'
+  ...
+# Subtest: MAL titles array is also matched
+ok 19 - MAL titles array is also matched
+  ---
+  duration_ms: 0.79673
+  type: 'test'
+  ...
+# Subtest: similar but unrelated titles are suggestions, not automatic classifications
+ok 20 - similar but unrelated titles are suggestions, not automatic classifications
+  ---
+  duration_ms: 0.446463
+  type: 'test'
+  ...
+# Subtest: same-title distinct works in one provider require confirmation
+ok 21 - same-title distinct works in one provider require confirmation
+  ---
+  duration_ms: 0.255164
+  type: 'test'
+  ...
+# Subtest: provider disagreement never guesses
+ok 22 - provider disagreement never guesses
+  ---
+  duration_ms: 0.216175
+  type: 'test'
+  ...
+# Subtest: embedded metadata and catalog disagreement is explicit
+ok 23 - embedded metadata and catalog disagreement is explicit
+  ---
+  duration_ms: 0.216356
+  type: 'test'
+  ...
+# Subtest: MangaDex original language, altTitles and long-strip tags are read
+ok 24 - MangaDex original language, altTitles and long-strip tags are read
+  ---
+  duration_ms: 0.366852
+  type: 'test'
+  ...
+# Subtest: MangaDex /manga endpoint is not evidence of Japanese origin
+ok 25 - MangaDex /manga endpoint is not evidence of Japanese origin
+  ---
+  duration_ms: 0.193321
+  type: 'test'
+  ...
+# Subtest: AniList country is read independently from generic MANGA format
+ok 26 - AniList country is read independently from generic MANGA format
+  ---
+  duration_ms: 0.153811
+  type: 'test'
+  ...
+# Subtest: novel adaptations never classify comics via a shared title
+ok 27 - novel adaptations never classify comics via a shared title
+  ---
+  duration_ms: 0.165759
+  type: 'test'
+  ...
+# Subtest: embedded catalog ID outranks loose title-only results
+ok 28 - embedded catalog ID outranks loose title-only results
+  ---
+  duration_ms: 0.177858
+  type: 'test'
+  ...
+# Subtest: HTTP rate limit and malformed API schemas produce visible diagnostics
+ok 29 - HTTP rate limit and malformed API schemas produce visible diagnostics
+  ---
+  duration_ms: 0.140892
+  type: 'test'
+  ...
+# Subtest: GraphQL errors are not empty successful matches
+ok 30 - GraphQL errors are not empty successful matches
+  ---
+  duration_ms: 0.500153
+  type: 'test'
+  ...
+# Subtest: all providers offline preserves confirmed local metadata
+ok 31 - all providers offline preserves confirmed local metadata
+  ---
+  duration_ms: 0.184198
+  type: 'test'
+  ...
+# Subtest: long-strip work appears in BOTH origin and format filters
+ok 32 - long-strip work appears in BOTH origin and format filters
+  ---
+  duration_ms: 0.166901
+  type: 'test'
+  ...
+# Subtest: unknown is not mixed in with actual Comic filter
+ok 33 - unknown is not mixed in with actual Comic filter
+  ---
+  duration_ms: 0.095624
+  type: 'test'
+  ...
+# Subtest: manual shelf classification cannot be overridden by automatic network guesses
+ok 34 - manual shelf classification cannot be overridden by automatic network guesses
+  ---
+  duration_ms: 0.174933
+  type: 'test'
+  ...
+# Subtest: manual candidate selection records a pinned ID and source
+ok 35 - manual candidate selection records a pinned ID and source
+  ---
+  duration_ms: 0.148133
+  type: 'test'
+  ...
+# Subtest: source website name alone is not enough for origin
+ok 36 - source website name alone is not enough for origin
+  ---
+  duration_ms: 0.087292
+  type: 'test'
+  ...
+# Subtest: a Japanese title alphabet alone does not establish original publication country
+ok 37 - a Japanese title alphabet alone does not establish original publication country
+  ---
+  duration_ms: 0.230607
+  type: 'test'
+  ...
+# Subtest: old wrongly defaulted Comic types become unclassified instead of remaining wrongly labeled
+ok 38 - old wrongly defaulted Comic types become unclassified instead of remaining wrongly labeled
+  ---
+  duration_ms: 0.096005
+  type: 'test'
+  ...
+# Subtest: published comic category can be explicitly marked Comic
+ok 39 - published comic category can be explicitly marked Comic
+  ---
+  duration_ms: 0.075904
+  type: 'test'
+  ...
+# Subtest: cross-chapter local evidence is considered across the whole shelf
+ok 40 - cross-chapter local evidence is considered across the whole shelf
+  ---
+  duration_ms: 0.094572
+  type: 'test'
+  ...
+# Subtest: same-title cross-catalog ID disagreement is not accepted even for matching origins
+ok 41 - same-title cross-catalog ID disagreement is not accepted even for matching origins
+  ---
+  duration_ms: 0.157497
+  type: 'test'
+  ...
+# Subtest: disjoint credited authors flag same-title collisions
+ok 42 - disjoint credited authors flag same-title collisions
+  ---
+  duration_ms: 0.19945
+  type: 'test'
+  ...
+# Subtest: reversed first/last author order does not create a spurious conflict
+ok 43 - reversed first/last author order does not create a spurious conflict
+  ---
+  duration_ms: 0.222165
+  type: 'test'
+  ...
+# (node:2383) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: clamp handles normal values, boundaries and non-finite values
+ok 44 - clamp handles normal values, boundaries and non-finite values
+  ---
+  duration_ms: 0.944623
+  type: 'test'
+  ...
+# Subtest: shelf names normalize whitespace and case
+ok 45 - shelf names normalize whitespace and case
+  ---
+  duration_ms: 0.261373
+  type: 'test'
+  ...
+# Subtest: volume ordering is numeric, not alphabetical
+ok 46 - volume ordering is numeric, not alphabetical
+  ---
+  duration_ms: 0.914267
+  type: 'test'
+  ...
+# Subtest: chapter ordering preserves decimal chapters
+ok 47 - chapter ordering preserves decimal chapters
+  ---
+  duration_ms: 0.205219
+  type: 'test'
+  ...
+# Subtest: volumes come before loose chapters within a mixed shelf
+ok 48 - volumes come before loose chapters within a mixed shelf
+  ---
+  duration_ms: 0.19903
+  type: 'test'
+  ...
+# Subtest: sort does not mutate the input array
+ok 49 - sort does not mutate the input array
+  ---
+  duration_ms: 0.15251
+  type: 'test'
+  ...
+# Subtest: common-name books share a shelf and unrelated series do not
+ok 50 - common-name books share a shelf and unrelated series do not
+  ---
+  duration_ms: 0.37178
+  type: 'test'
+  ...
+# Subtest: resume chooses the most recently read comic, not the largest chapter number
+ok 51 - resume chooses the most recently read comic, not the largest chapter number
+  ---
+  duration_ms: 0.255385
+  type: 'test'
+  ...
+# Subtest: unread shelves begin at their first numbered volume
+ok 52 - unread shelves begin at their first numbered volume
+  ---
+  duration_ms: 0.394734
+  type: 'test'
+  ...
+# Subtest: completed comics are recognized from their saved 100 percent bookmark
+ok 53 - completed comics are recognized from their saved 100 percent bookmark
+  ---
+  duration_ms: 0.469887
+  type: 'test'
+  ...
+# Subtest: shelf resume skips completed comics and picks the newest unfinished comic
+ok 54 - shelf resume skips completed comics and picks the newest unfinished comic
+  ---
+  duration_ms: 0.243176
+  type: 'test'
+  ...
+# Subtest: paged progress counts the visible page
+ok 55 - paged progress counts the visible page
+  ---
+  duration_ms: 0.110587
+  type: 'test'
+  ...
+# Subtest: scroll progress retains a fractional position inside the current page
+ok 56 - scroll progress retains a fractional position inside the current page
+  ---
+  duration_ms: 0.118518
+  type: 'test'
+  ...
+# Subtest: unread and zero-page comics report zero percent
+ok 57 - unread and zero-page comics report zero percent
+  ---
+  duration_ms: 0.085519
+  type: 'test'
+  ...
+# Subtest: out-of-range progress cannot exceed 100 percent
+ok 58 - out-of-range progress cannot exceed 100 percent
+  ---
+  duration_ms: 0.089334
+  type: 'test'
+  ...
+# Subtest: left and right arrow semantics reverse in RTL, but non-arrow keys do not
+ok 59 - left and right arrow semantics reverse in RTL, but non-arrow keys do not
+  ---
+  duration_ms: 0.149576
+  type: 'test'
+  ...
+# Subtest: page flip turns match LTR and RTL reading direction
+ok 60 - page flip turns match LTR and RTL reading direction
+  ---
+  duration_ms: 0.150717
+  type: 'test'
+  ...
+# Subtest: relative time is stable at minute and day boundaries
+ok 61 - relative time is stable at minute and day boundaries
+  ---
+  duration_ms: 0.127262
+  type: 'test'
+  ...
+# Subtest: single Space advances once, only after the detection window
+ok 62 - single Space advances once, only after the detection window
+  ---
+  duration_ms: 0.271048
+  type: 'test'
+  ...
+# Subtest: double Space changes chapter without an unwanted single-page advance
+ok 63 - double Space changes chapter without an unwanted single-page advance
+  ---
+  duration_ms: 0.155324
+  type: 'test'
+  ...
+# Subtest: double Shift+Space goes to the previous chapter
+ok 64 - double Shift+Space goes to the previous chapter
+  ---
+  duration_ms: 0.167552
+  type: 'test'
+  ...
+# Subtest: separate taps outside the time window remain separate page turns
+ok 65 - separate taps outside the time window remain separate page turns
+  ---
+  duration_ms: 0.208283
+  type: 'test'
+  ...
+# Subtest: mixing Space and Shift+Space does not trigger a chapter change
+ok 66 - mixing Space and Shift+Space does not trigger a chapter change
+  ---
+  duration_ms: 0.145089
+  type: 'test'
+  ...
+# Subtest: leaving the reader cancels a pending Space action
+ok 67 - leaving the reader cancels a pending Space action
+  ---
+  duration_ms: 0.15903
+  type: 'test'
+  ...
+# Subtest: bookmark writes coalesce to the newest value
+ok 68 - bookmark writes coalesce to the newest value
+  ---
+  duration_ms: 0.491871
+  type: 'test'
+  ...
+# Subtest: in-flight bookmark writes cannot overwrite newer bookmarks out of order
+ok 69 - in-flight bookmark writes cannot overwrite newer bookmarks out of order
+  ---
+  duration_ms: 0.248895
+  type: 'test'
+  ...
+# Subtest: a failed save is retained for retry
+ok 70 - a failed save is retained for retry
+  ---
+  duration_ms: 0.594556
+  type: 'test'
+  ...
+# Subtest: after an in-flight failure the newest pending bookmark wins
+ok 71 - after an in-flight failure the newest pending bookmark wins
+  ---
+  duration_ms: 0.276066
+  type: 'test'
+  ...
+# Subtest: simultaneous flush requests share a serialized write
+ok 72 - simultaneous flush requests share a serialized write
+  ---
+  duration_ms: 0.276777
+  type: 'test'
+  ...
+# Subtest: disposing the reader cancels unsent work and ignores later schedules
+ok 73 - disposing the reader cancels unsent work and ignores later schedules
+  ---
+  duration_ms: 0.221503
+  type: 'test'
+  ...
+1..73
+# tests 73
+# suites 0
+# pass 73
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 171.83401
